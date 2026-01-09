@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Economy Dashboard</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i data-lucide="globe" class="brand-icon"></i>
+                <span class="brand-text">EcoVis</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" id="nav-overview">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-report">
+                    <i data-lucide="file-text"></i>
+                    <span>Report</span>
+                </a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-titles">
+                    <h1>Global Economic Indicators</h1>
+                    <p class="subtitle">Interactive visualization of world economic data</p>
+                </div>
+                <div class="controls">
+                    <!-- Country Selector Removed -->
+                </div>
+            </header>
+
+            <!-- Overview View -->
+            <div id="overview-view" class="dashboard-grid">
+
+                <!-- Main Chart -->
+                <div class="chart-container main-chart">
+                    <div class="chart-header">
+                        <h2>Economic Trends Over Time</h2>
+                        <div class="chart-actions">
+                            <button class="action-btn active" data-metric="GDP">GDP</button>
+                            <button class="action-btn" data-metric="Population">Pop.</button>
+                        </div>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Secondary Charts -->
+                <div class="chart-container secondary-chart">
+                    <div class="chart-header">
+                        <h2>Regional Distribution</h2>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas id="distChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container secondary-chart">
+                    <div class="chart-header">
+                        <h2>Growth Comparison</h2>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report View -->
+            <div id="report-view" class="report-container hidden">
+                <div class="report-header">
+                    <h2>Economic Analysis Report</h2>
+                    <p class="report-date">January 2026</p>
+                </div>
+
+                <div class="report-section">
+                    <h3>Global Economic Trends</h3>
+                    <p>
+                        The global economy has shown significant resilience in recent years.
+                        Data indicates a steady recovery in GDP across major nations, although inflation rates remain a
+                        key area of focus.
+                        Emerging markets continue to play a pivotal role in driving global growth.
+                    </p>
+                    <div class="report-image-placeholder">
+                        <img src="Capture1.PNG" alt="Economic Trend Chart">
+                        <p class="img-caption">Figure 1: Global GDP Trends over the last decade.</p>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h3>Regional Disparities</h3>
+                    <p>
+                        While growth is positive, disparities between developed and developing nations need attention.
+                        Infrastructure development and technology adoption are accelerating in the Asia-Pacific region,
+                        contributing to a shift in economic power dynamics.
+                    </p>
+                    <div class="report-image-placeholder">
+                        <img src="https://placehold.co/800x400/1e293b/94a3b8?text=Regional+Comparison"
+                            alt="Regional Comparison">
+                        <p class="img-caption">Figure 2: Comparative analysis of regional economic performance.</p>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h3>Future Outlook</h3>
+                    <p>
+                        Projections suggest continued stabilization. Key drivers for the next fiscal year include
+                        sustainable energy investments and digital transformation of traditional industries.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
